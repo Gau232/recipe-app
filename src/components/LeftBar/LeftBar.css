@@ -1,0 +1,90 @@
+
+.homepage-leftBar {
+    width: 280px;
+    height: 100vh;
+    background-color: #f7f9fb;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.leftTop{
+    width: 100%;
+    height: 25%;
+    background-color: #0e0f2d;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+
+    & h3 {
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 4px;
+        margin-bottom: 5px;
+    }
+
+    & h3 span {
+        color: #2cc76c;
+    }
+
+    & p {
+        color: #f7f9fb;
+        opacity: 0.5;
+    }
+
+    & h4 {
+        font-size: 2rem;
+        color: #2cc76c;
+        font-weight: 500;
+    }
+}
+
+.leftBottom {
+    height: 75%;
+    width: 100%;
+}
+
+.menu {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #3e3e43;
+
+    & h3 {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+}
+
+.menuItems {
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 8px 7px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: 1s;
+    position: relative;
+}
+
+.menuItems:hover:not(.blur) {
+    opacity: 1;
+    color: #2cc76c;
+    transition: 0.2s;
+}
+
+.menuItems:hover:not(.blur)::after {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: #2cc76c;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.blur {
+    filter: blur(0.8px);
+}

@@ -18,6 +18,12 @@ https://todo-app-gau232.vercel.app/
 
 React JS, HTML and CSS
 
+## Libraries/Packages used
+- Framer motion
+- styled components
+- react splide
+- react router dom
+
 ## Screenshots
 
 ![App Screenshot](https://github.com/Gau232/TodoApp/blob/main/src/assets/sample_images/todo-project-pic1.png)

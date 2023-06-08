@@ -7,7 +7,6 @@ import './Home.css';
 import { SPOONACULAR_API_KEY } from "../../apiKey.js";
 import { Link } from "react-router-dom";
 
-
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -31,7 +30,6 @@ function Home() {
     setSearchResults([]);
   };
 
-
   useEffect(() => {
     const visitedItemsData = localStorage.getItem("visitedItems");
     if (visitedItemsData && visitedItems.length === 0) {
@@ -40,11 +38,13 @@ function Home() {
   }, [visitedItems]);
 
   const addToVisitedItems = (product) => {
-    const productExists = visitedItems.find((item) => item.id === product.id);
-    if (!productExists) {
-      const updatedVisitedItems = [product, ...visitedItems];
-      setVisitedItems(updatedVisitedItems);
-      localStorage.setItem("visitedItems", JSON.stringify(updatedVisitedItems));
+    if (product) {
+      const productExists = visitedItems.find((item) => item.id === product.id);
+      if (!productExists) {
+        const updatedVisitedItems = [product, ...visitedItems];
+        setVisitedItems(updatedVisitedItems);
+        localStorage.setItem("visitedItems", JSON.stringify(updatedVisitedItems));
+      }
     }
   };
 
@@ -71,15 +71,16 @@ function Home() {
                 Clear Results
               </button>
               <div className='searches'>
-              {searchResults.map((result) => (
+                {searchResults.map((result) => (
                   <Link
                     to={`/recipes/${result.id}`}
-                    onClick={() => addToVisitedItems(result)}>
-                    <div className="searchResult" key={result.id}>
+                    onClick={() => addToVisitedItems(result)}
+                    key={result.id}>
+                    <div className="searchResult">
                       <p>{result.title}</p>
                     </div>
                   </Link>
-              ))}
+                ))}
               </div>
             </div>
           )}

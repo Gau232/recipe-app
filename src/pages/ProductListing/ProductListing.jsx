@@ -30,27 +30,29 @@ function ProductListing() {
       setProducts(JSON.parse(check));
       console.log("Local");
       console.log(products);
-    } else if(type !== "visitedItems"){
+    } else if (type !== "visitedItems") {
       console.log(type);
       const api = await fetch(
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${SPOONACULAR_API_KEY}&instructionsRequired=true&number=48&type=${type}`
       );
       const data = await api.json();
-      if (data) {
+      if (data && data.results) {
         localStorage.setItem(type, JSON.stringify(data.results));
+        setProducts(data.results);
+        console.log("api");
+        console.log(data.results);
       }
-      setProducts(data.results);
-      console.log("api");
-      console.log(data.results);
     }
   };
 
   const addToVisitedItems = (product) => {
-    const productExists = visitedItems.find((item) => item.id === product.id);
-    if (!productExists) {
-      const updatedVisitedItems = [product, ...visitedItems];
-      setVisitedItems(updatedVisitedItems);
-      localStorage.setItem("visitedItems", JSON.stringify(updatedVisitedItems));
+    if (product) {
+      const productExists = visitedItems.find((item) => item.id === product.id);
+      if (!productExists) {
+        const updatedVisitedItems = [product, ...visitedItems];
+        setVisitedItems(updatedVisitedItems);
+        localStorage.setItem("visitedItems", JSON.stringify(updatedVisitedItems));
+      }
     }
   };
 

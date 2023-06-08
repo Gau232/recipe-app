@@ -22,8 +22,10 @@ function Equipments({ id }) {
             const api = await fetch(`https://api.spoonacular.com/recipes/${id}/equipmentWidget.json?apiKey=${SPOONACULAR_API_KEY}`);
             const data = await api.json();
             console.log(data.equipment);
-            localStorage.setItem(`equipment-${id}`, JSON.stringify(data.equipment));
-            setEquipments(data.equipment);
+            if (data && data.equipment) {
+                localStorage.setItem(`equipment-${id}`, JSON.stringify(data.equipment));
+                setEquipments(data.equipment);
+            }
         }
     }
 
@@ -41,9 +43,6 @@ function Equipments({ id }) {
                     )
                 })
             }
-
-
-
         </div>
     )
 }

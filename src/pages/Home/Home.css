@@ -40,18 +40,6 @@
         letter-spacing: 1px;
     }
 
-    & .searchWrapper {
-        border: 1px solid rgba(180, 173, 173, 0.712);
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 10px;
-        width: 400px;
-        height: 40px;
-        padding: 0 10px;
-        border-radius: 5px;
-    }
-
     & input {
         height: 80%;
         width: 80%;
@@ -62,6 +50,21 @@
         margin-left: 8px;
     }
 }
+
+.searchWrapper {
+    border: 1px solid rgba(180, 173, 173, 0.712);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 400px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+
+
 
 .rightMidCarousal {
     width: 100%;

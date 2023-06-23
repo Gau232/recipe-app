@@ -21,7 +21,9 @@ React JS, HTML and CSS
 - react splide
 - react router dom
 
-<!-- ## Screenshots
+## Screenshots
 
-![App Screenshot](https://github.com/Gau232/TodoApp/blob/main/src/assets/sample_images/todo-project-pic1.png)
-![App Screenshot](https://github.com/Gau232/TodoApp/blob/main/src/assets/sample_images/todo-project-pic2.png) -->
+![App Screenshot](https://github.com/Gau232/recipe-app/tree/master/src/assets/sample_images/project-pic-1.png)
+![App Screenshot](https://github.com/Gau232/recipe-app/tree/master/src/assets/sample_images/project-pic-1.png)
+![App Screenshot](https://github.com/Gau232/recipe-app/tree/master/src/assets/sample_images/project-pic-3.png)
+![App Screenshot](https://github.com/Gau232/recipe-app/tree/master/src/assets/sample_images/project-pic-4.png)

@@ -24,6 +24,6 @@ React JS, HTML and CSS
 ## Screenshots
 
 ![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-1.png)
-![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-1.png)
+![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-2.png)
 ![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-3.png)
-![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-1.png)
+![App Screenshot](https://github.com/Gau232/recipe-app/blob/master/src/assets/images/sample_images/project-pic-4.png)

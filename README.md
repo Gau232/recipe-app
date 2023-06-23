@@ -4,7 +4,7 @@ This recipe web app is created using React.
 
 ## Demo
 
-https://recipe-app-gau232.vercel.app/
+https://recipe-app-eight-rho.vercel.app/
 
 ## Features
 - Recipe list

@@ -57,3 +57,11 @@
     transition: 0.2s;
 }
 
+.splide__pagination {
+    bottom: -1.5em;
+}
+
+.splide__pagination__page.is-active {
+    background: #2cc76c;
+    opacity: 0.5;
+}

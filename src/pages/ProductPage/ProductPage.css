@@ -169,6 +169,7 @@
     margin: 30px;
     gap: 20px;
     text-decoration: none;
+    z-index: 1;
 }
 
 .icons{

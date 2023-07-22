@@ -3,6 +3,7 @@ import { FiSearch } from 'react-icons/fi';
 import LeftBar from '../../components/LeftBar/LeftBar';
 import Slider from '../../components/Slider/Slider';
 import Categories from '../../components/Categories/Categories';
+import BottomBar from '../../components/BottomBar/BottomBar';
 import './Home.css';
 import { SPOONACULAR_API_KEY } from "../../apiKey.js";
 import { Link } from "react-router-dom";
@@ -11,6 +12,11 @@ function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [visitedItems, setVisitedItems] = useState([]);
+  const [navBar,setnavBar] = useState(barTypeonLoad());
+
+ function barTypeonLoad() {
+    return (window.innerWidth < 800)?"bottom":"left";
+  }; 
 
   const handleSearch = async () => {
     if (searchQuery) {
@@ -48,10 +54,19 @@ function Home() {
     }
   };
 
+  window.addEventListener('resize',()=>{
+    if(window.innerWidth < 800){
+      setnavBar("bottom");
+    }else{
+      setnavBar("left");
+    }
+  });
+
   return (
     <div className="homePage">
-      <LeftBar />
+      {(navBar==="left")?(<LeftBar />):(<BottomBar/>)}
       <div className="homepage-rightBar">
+        {(navBar!=="left") && (<h3 id='mobile-logo'>Recipe<span>{` `}App</span></h3>)}
         <div className="rightTopSearch">
           {/* <h4>Hello!</h4> */}
           <h3>Discover Recipes</h3>
@@ -68,7 +83,7 @@ function Home() {
           {searchResults.length > 0 && (
             <div className="searchDropdown">
               <button className="clearButton" onClick={clearSearchResults}>
-                Clear Results
+                Close
               </button>
               <div className='searches'>
                 {searchResults.map((result) => (

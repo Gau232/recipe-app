@@ -1,20 +1,55 @@
 .homePage {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
-    position: relative;
+    flex-direction: row;
+    /* position: relative; */
+}
+
+#mobile-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #0e0f2d;
+    padding: 5px 10px;
+    gap: 12px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 4px;
+    /* margin-bottom: 5px; */
+    & span {
+        color: #2cc76c;
+    }
 }
 
 .homepage-rightBar {
-    margin-left: 280px;
+    margin-left: 250px;
     width: 100%;
     height: 100%;
     background-color: #ffffff;
     padding: 20px;
+    /* padding-bottom: 50px; */
     display: flex;
     flex-direction: column;
     gap: 40px;
     flex-grow: 1;
+}
+
+@media (max-width: 800px) {
+    .homepage-rightBar {
+        margin-left: 0;
+        height: calc(100% - 50px);
+        padding-bottom: 0;
+    }
+
+    .rightTopSearch h3 {
+        display: none;
+    }
+    .rightTopSearch {
+        margin-top: 30px;
+    }
 }
 
 .rightTopSearch {
@@ -27,7 +62,7 @@
     align-items: center;
     padding: 0 20px 0 0;
     color: #0e0f2d;
-    margin-bottom: 20px;
+    /* margin-top: 30px; */
 
     & h4 {
         position: absolute;
@@ -39,6 +74,7 @@
     & h3 {
         letter-spacing: 1px;
     }
+
 
     & input {
         height: 80%;
@@ -87,15 +123,13 @@
 }
 
 .rightBottomCategories {
-    position: relative;
-    padding: 20px 100px 0 100px;
+    height: 55%;
+}
 
-    & h3 {
-        color: #3e3e43;
-        position: absolute;
-        top: 0px;
-        left: 0;
-    }
+
+.rightBottomCategories h3 {
+    color: #3e3e43;
+    margin-bottom: 10px;
 }
 
 /********************/
@@ -128,9 +162,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 4px;
+    max-height: 130px;
+    overflow-y: scroll;
 }
-
 .searchResult {
 
 
@@ -207,8 +242,27 @@
     display: block;
 }
 
+.clearButton {
+    background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%);
+    /* margin: 10px; */
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    border: 5px solid #fff;
+    /* margin-bottom: 10px; */
+}
+
 .clearButton:hover {
     background-position: right center;
     color: #fff;
     text-decoration: none;
 }
+

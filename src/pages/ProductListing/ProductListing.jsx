@@ -4,10 +4,16 @@ import { SPOONACULAR_API_KEY } from "../../apiKey.js";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import LeftBar from "../../components/LeftBar/LeftBar";
+import BottomBar from '../../components/BottomBar/BottomBar';
 
 function ProductListing() {
   const [products, setProducts] = useState([]);
   const [visitedItems, setVisitedItems] = useState([]);
+  const [navBar,setnavBar] = useState(barTypeonLoad());
+
+  function barTypeonLoad() {
+    return (window.innerWidth < 800)?"bottom":"left";
+  }; 
 
   const params = useParams();
   const type = params.product_type === "recently-viewed" ? "visitedItems" : params.product_type;
@@ -56,10 +62,19 @@ function ProductListing() {
     }
   };
 
+  window.addEventListener('resize',()=>{
+    if(window.innerWidth < 800){
+      setnavBar("bottom");
+    }else{
+      setnavBar("left");
+    }
+  });
+
   return (
     <div className="productListing-wrapper0">
       <div className="leftBar-container">
-        <LeftBar />
+      {(navBar==="left")?(<LeftBar />):(<BottomBar/>)}
+        {/* <LeftBar /> */}
       </div>
       <div className="rigthConatiner">
         <h3>{type}</h3>

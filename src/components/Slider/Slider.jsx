@@ -8,7 +8,19 @@ import './Slider.css'
 export default function Slider() {
   const [visitedItems, setVisitedItems] = useState([]);
   const [random, setRandom] = useState([]);
+  const [perPage, setPerPage] = useState(()=>{
+    if(window.innerWidth > 850){
+      return 4;
+    }
+    if(window.innerWidth < 850 && window.innerWidth >= 500){
+      return 3;
+    }
+    if(window.innerWidth < 500){
+      return 2;
+    }
+  });
 
+ 
   useEffect(() => {
     getRandom();
   }, []);
@@ -47,8 +59,20 @@ export default function Slider() {
     }
   };
 
+  window.addEventListener('resize',()=>{
+    if(window.innerWidth > 850){
+      setPerPage(4);
+    }
+    if(window.innerWidth < 850){
+      setPerPage(3);
+    }
+    if(window.innerWidth < 500){
+      setPerPage(2);
+    }
+  });
+
   return (
-    <Splide options={{ rewind: true, perPage: 4, gap: '1rem', autoplay: true }}>
+    <Splide options={{ rewind: true, perPage: perPage, gap: '1rem', autoplay: true }}>
       {random.map((recipe) => {
         return (
           <SplideSlide key={recipe.id}>

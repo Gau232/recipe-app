@@ -1,17 +1,29 @@
+.category-cardWrapper {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.category-cardWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.category-wrapper {
+    height: calc(100% - 35px);
+}
+
+
 .category-wrapper p{
     color: #3e3e43;
     font-size: 1.25rem;
 }
 
 
-.category-cardWrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 20px 0;
-}
 
 .category-card {
     background-color: #fff;

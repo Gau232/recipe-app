@@ -15,8 +15,8 @@
 
 .productpage {
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,6 +172,7 @@
     z-index: 1;
 }
 
+
 .icons{
     color: #000;
     border: 2px solid rgb(0, 0, 0);
@@ -186,6 +187,8 @@
 }
 
 .icons:hover{
-     color: #042c2c;
-     border-color: #042c2c;
+     color: #fff;
+     border-color: #fff;
+    background-color: #2cc76c;
+
 }
